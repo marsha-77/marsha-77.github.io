@@ -1,0 +1,103 @@
+body {
+    width: 960px;
+    margin: 0 auto;
+    line-height: 20px;
+}
+
+/* add up solid border */
+.title {
+    border: solid thick black;
+    text-align: center;
+    line-height: 30px;
+}
+
+/* set the left and right section to be aligned*/
+.container {
+    display: flex;
+}
+
+/* set left image to the right and over the words */
+/* the clear condition gives this image to be under the before section of the left-section */
+.left-section img {
+    float: right;
+    clear: right;
+}
+
+.right-section img {
+    float: left;
+    clear: left;
+}
+
+/* the two image is overlapped by putting this margin as a minuous value, */
+.right-section {
+    margin-left: -320px;
+}
+
+.left-section,
+.right-section {
+    padding: 10px;
+    text-align: justify;
+}
+
+/* the border radious gives the image as circle shape, (even though I alread prepared the circle shape image for this) */
+/* here the shape-outside is showing an error in the css validation, but it seems necessary to implementing the circle, and tested several types of browser, and had no issue. */
+.wrap-img {
+    margin: 0px;
+    border-radius: 50%;
+    shape-outside: circle(50%);
+    }
+
+/* Because I put margin left as -320, the word paragraphs also overlapped together, so I put this margin to make it separated. */
+.left-paragraph {
+    margin-right: 180px;
+}
+
+.right-paragraph {
+    margin-left: 180px;
+}
+
+/* these two before section gives a gap in between start line and the center image */
+.left-section::before {
+    float: right;
+    width: 0px;
+    height: 90px;
+    content: " "
+}
+
+.right-section::before {
+    float: left;
+    width: 0px;
+    height: 90px;
+    content: " "
+}
+
+/* I could put the warter only in the div by having the overflow hidden condition */
+#water-container{
+    width: 960px;
+    height: 400px;
+    overflow: hidden;
+}
+
+/* I simply set a long text and make it rotated to have the similar warter mark */
+/* since the lotation made a bit of dis location from the center as well (because of the size) I added translate to make it centered */
+#watermark {
+    line-height: 50px;
+    width: 1500px;
+    transform: translate(-200px, -400px) rotate(-35deg);
+    font-size: 3em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1); 
+}
+
+#absolute-img {
+    position: absolute;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: 300px;
+} 
+
+/* by putting width as 100% the all images are aligned as full width within the div */
+.table-img {
+    width: 100%;
+}
+
