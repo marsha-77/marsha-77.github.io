@@ -1,0 +1,13 @@
+
+.box1 {background: yellow;}
+.box2 {background: orange;}
+.box3 {background: violet;}
+.box4 {background: palegreen;}
+.box5 {background: red;}
+.box6 {background: greenyellow;}
+.box7 {background: blue;}
+.container {display: inline-flex;
+    flex-wrap: wrap;
+border: 3px solid black;}
+.box {font-size: 30px;
+padding: 30px;}

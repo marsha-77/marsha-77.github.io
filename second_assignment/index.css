@@ -71,6 +71,12 @@ body {
     content: " "
 }
 
+#dash-container{
+    border-top: 5px;
+    border-bottom: 0px;
+    border-style:dashed;
+}
+
 /* I could put the warter only in the div by having the overflow hidden condition */
 #water-container{
     width: 960px;
