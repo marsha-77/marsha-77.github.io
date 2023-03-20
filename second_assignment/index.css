@@ -17,7 +17,7 @@ body {
 }
 
 /* set left image to the right and over the words */
-/* the clear condition gives this image to be under the before section of the left-section */
+/* the clear property gives this image to be under the before section of the left-section */
 .left-section img {
     float: right;
     clear: right;
@@ -77,7 +77,7 @@ body {
     border-style:dashed;
 }
 
-/* I could put the warter only in the div by having the overflow hidden condition */
+/* I could put the water only in the div by having the overflow hidden condition */
 #water-container{
     width: 960px;
     height: 400px;

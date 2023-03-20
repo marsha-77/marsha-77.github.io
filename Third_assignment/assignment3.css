@@ -1,0 +1,199 @@
+body 
+{
+    width: 1000px;
+    margin:0 auto;
+    background-color: blanchedalmond;
+}
+
+h1{
+    top:40%;
+    width:100%;
+    font-family: 'Courgette', cursive;
+    font-size:4em;
+    text-align:center;
+    color:#fff;
+}
+
+/* action definitions starts here */
+/* added gradient effect */
+#container {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #eea6d5, #eed5ab);
+    background-size: 200%;
+    animation: gradient 10s ease infinite;
+    border-style:double;
+}
+#container p{
+    margin: 30px;
+}
+
+/* change background position to show up different color as time goes by */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* set the item from the far right side (to not to show in the begining and slide to the left) */
+@keyframes slide-from-right {
+    from { left: 10000px; top: 0px; }
+    to { left: 0px; top: 0px; }
+}
+/* set the item bigger */
+@keyframes bigger {
+    from { width: 25%}
+    to { width: 100%}
+}
+
+/* set the item rotate from left top-> right top -> right bottom -> left bottom -> and go back to left top */
+@keyframes turnaround {
+    0% { left: 0%; top: 0px; }
+    25% { left: calc(100% - 400px); top: 0px; animation-timing-function: ease-out;}
+    50% { left: calc(100% - 400px); top: calc(100% - 300px); }
+    75% { left: 0px; top: calc(100% - 300px); }
+    100% { left: 0px; top: 0px; }
+}
+
+/* set the item going down moving right to left, left to right as well as rotating.  */
+@keyframes fall{
+    0%{
+        top:-10%;
+        transform:translateX(20px) rotate(0deg);
+    }
+    20%{
+        transform:translateX(-30px) rotate(45deg);
+    }
+    30%{
+        transform:translateX(-50px) rotate(45deg);
+    }
+    40%{
+        transform:translateX(-10px) rotate(90deg);
+    }
+    60%{
+        transform:translateX(60px) rotate(180deg);
+    }
+    80%{
+        transform:translateX(0px) rotate(135deg); 
+    }
+    100%{
+        top:180%;
+        transform:translateX(10px) rotate(225deg);
+    }
+}
+/* action definitions ends here */
+
+.sub-galary{
+    display: flex;
+}
+
+.first-slide {
+    animation-delay: -1s;
+    animation-timing-function: ease;
+}
+.second-slide {
+    animation-delay: 0s;
+    animation-timing-function: ease-in;
+}
+.third-slide {
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+}
+.forth-slide {
+    animation-delay: 2s;
+    animation-timing-function: ease-in-out;
+}
+.slide-image {
+    width: 24%;
+    object-fit: cover;
+    aspect-ratio : 1 / 1;
+    position: relative;
+    animation-name: slide-from-right;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+.bigger-image {
+    width: 25%
+}
+
+.bigger-image:hover {
+    animation-name: bigger;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+.turn-around-container{
+    border-style:double;
+    background: linear-gradient(-45deg, #ffffff, #999999);
+    background-size: 200%;
+    animation: gradient 3s ease infinite;
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.turn-around-container img{
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    animation-name: turnaround;
+    animation-iteration-count: infinite;
+}
+
+.first-turnaround {
+    animation-duration: 4s;
+    animation-delay: 1.2s;
+    animation-direction: reverse;
+}
+
+.second-turnaround {
+    animation-duration: 10s;
+}
+
+.leaf img{
+    position:absolute ;
+    display:block ;
+}
+.leaf img:nth-child(1){
+    width:75px;
+    height:75px;
+    left:20%; 
+    animation:fall 15s linear infinite ;
+    animation-delay:-2s;
+}
+.leaf img:nth-child(2){
+    height:45px;
+    left:30%; 
+    animation:fall 10s linear infinite ;
+    animation-delay:-4s;
+}
+.leaf img:nth-child(3){
+    height:65px;
+    left:50%; 
+    animation:fall 20s linear infinite ;
+    animation-delay:-7s;
+}
+.leaf img:nth-child(4){
+    height:35px;
+    left:60%; 
+    animation:fall 18s linear infinite ; 
+    animation-delay:-5s;
+}
+.leaf img:nth-child(5){
+    height:35px;
+    left:85%; 
+    animation:fall 12s linear infinite ;
+    animation-delay:-5s;
+}
+.leaf img:nth-child(6){
+    height:25px;
+    left:15%; 
+    animation:fall 16s linear infinite ;
+    animation-delay:-10s;
+}
+
