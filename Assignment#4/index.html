@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Temperature Conversion Page</title>
+        <link rel="stylesheet" href="index.css">
+        <meta name="description" content="Temperature converter">
+        <meta name="keywords" content="HOMEWORK, HTML, CSS, JavaScript, temperature, converter">
+    </head>
+    
+
+    <body>
+        <script>
+
+            // draw a red thermometer bar into the thermometer reading the celsius value as parameter
+            function drawTemperature(celsius) {
+                if (celsius > 100) {
+                    celsius = 100;
+                }
+                if (celsius < -50) {
+                    celsius = -50;
+                }
+                var canvas = document.getElementById("thermometer-bar");
+                if (canvas.getContext) {
+                    var context = canvas.getContext('2d');
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    context.fillStyle = "#FF0000";
+                    context.fillRect(138, 83 - celsius*0.7, 24, celsius*0.7 +40);
+                }
+            }
+
+            // it takes the value from the input box, check the condition, and refresh the input box with calculated value.    
+            function calcTemp() {
+                var fahrenheit = parseFloat(document.getElementById("Fahrenheit").value);
+                var celsius = parseFloat(document.getElementById("Celsius").value);
+
+                if (!Number.isNaN(fahrenheit)) {
+                    celsius = (fahrenheit - 32) * 5 / 9;
+                    // (x°F − 32) × 5/9 = y°C
+                    document.getElementById("Celsius").value = celsius;
+                    drawTemperature(celsius);
+                }
+                else if (!Number.isNaN(celsius)) {
+                    // y°F = (x°C * 9/5) +32
+                    fahrenheit = (celsius * 9 / 5) + 32;
+                    document.getElementById("Fahrenheit").value = fahrenheit;
+                    drawTemperature(celsius);
+                }
+                //message for the non-numeric value input
+                else {
+                    window.alert("Please put a numeric value.");
+                }
+            }
+        </script>    <h1>Temperature Conversion Page</h1>
+        <hr>
+        <!-- this bg class is for setup the background image -->
+        <div class="bg">
+            <!-- as a combined module with thermometer and converter -->
+            <div class="thermo">
+                <div id="thermo-img">
+                    <img id="thermometer-img" src="thermometer.png" alt="A photo of a thermometer">
+                    <canvas id="thermometer-bar" ></canvas>
+                </div>
+                    <!-- this wrapper is to give a floating pannel effect -->
+                    <div class="wrapper" id="thermo-calc">
+                        <br>
+                        <br>
+                        <label>Enter a temperature in degrees Fahrenheit:</label>
+                        <input type="text" id="Fahrenheit">
+                        <br>
+                        <br>
+                        <br>
+                        <!-- effect trigger for the converter -->
+                        <button onclick="calcTemp()">Convert to Celsius</button>
+                        <br>
+                        <br>
+                        <br>
+                        <label>Equivalent temperature in degrees Celsius:</label>
+                        <input type="text" id="Celsius">
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>
