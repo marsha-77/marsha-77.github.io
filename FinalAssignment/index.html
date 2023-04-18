@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Marsha's Library</title>
+        <link rel="stylesheet" href="mainpage.css">
+        <!-- meta data for SEO -->
+        <meta name="description" content="Marsha's Library : main page">
+        <meta name="keywords" content="HOMEWORK, HTML, CSS, menu">
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <img src="images/2.png" alt="">
+                <p>Marsha's Library</p>
+            </a>
+            <ul >
+                <li><a href="#">Home</a></li>
+                <li><a href="#">gallary</a>
+                    <ul>
+                        <li><a href="recentlist.html">Recent List</a></li>
+                        <li><a href="bestseller.html">Bestseller</a></li>
+                        <li><a href="myfavoritebooks.html">My Favorite books</a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Projects</a>
+                    <ul>
+                        <li><a href="#">furture support</a></li>
+                        <li><a href="#">furture support</a></li>
+                        <li><a href="#">furture support</a></li>
+                        <li><a href="#">furture support</a></li>
+                    </ul>
+                </li>
+                <li><a href="contactus.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="content">
+            <h1 id="title">Marsha's Library</h1>
+            <hr>
+            <br>
+            <map name="a">
+                <area shape="rect" coords="0,0,1000,245" href="bestseller.html">
+                <area shape="rect" coords="0,245,1000,490" href="recentlist.html">
+                <area shape="rect" coords="0,490,1000,745" href="myfavoritebooks.html">
+                <area shape="rect" coords="0,745,1000,980" href="contactus.html">
+            </map>
+            <div class="wrapper-big" usemap="#a">
+                <p class="library section1"><a href="bestseller.html">Bestseller list</a></p>
+                <p class="library section2"><a href="recentlist.html">Recent list </a></p>
+                <p class="library section3"><a href="myfavoritebooks.html">Owner's choice </a></p>
+                <p class="library section4"><a href="contactus.html">Contact us </a></p>
+                <img src="images\library.jpg" alt="library-links" usemap="#a" />
+            </div>
+        </div>
+
+    </body>
+</html>
